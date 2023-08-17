@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Services.ViewModels
+{
+    public class ProductViewModel
+    {
+        public int Id { get; set; }
+
+        [StringLength(255)]
+        [Required(ErrorMessage = "Vui lòng nhập Tên sản phẩm!")]
+        public string Name { get; set; }
+
+        [StringLength(255)]
+        [Required(ErrorMessage = "Vui lòng nhập Mã sản phẩm!")]
+        public string Code { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Mô tả ngắn!")]
+        public string Description { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Mô tả chi tiết!")]
+        [Column(TypeName = "ntext")]
+        public string Detail { get; set; }
+
+        public string Images { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng chọn ảnh đại diện!")]
+        public string Avatar { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Số lượng!")]
+        public int Qualtity { get; set; }
+
+        public string Unit { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Giá nhập!")]
+        public decimal Price { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập Giá niêm yết!")]
+        public decimal? UnitPrice { get; set; }
+        
+        public decimal? SaleOff { get; set; }
+
+        public DateTime? StartDate { get; set; }
+
+        public DateTime? EndDate { get; set; }
+
+        public bool? Published { get; set; }
+
+        public bool? IsHot { get; set; }
+
+        public bool? View { get; set; }
+
+        public string Categories { get; set; }
+
+        public string CatName { get; set; }
+
+        public int CatId { get; set; }
+
+        public decimal SellPrice
+        {
+            set { SellPrice = value; }
+            get
+            {
+                if (SaleOff != null && SaleOff.Value > 0 && DateTime.Now > StartDate && DateTime.Now < EndDate)
+                {
+                    return SaleOff.Value;
+                }
+                else
+                {
+                    return Price;
+                }
+            }
+        }
+
+        public int QuantitySold { get; set; }
+    }
+}
