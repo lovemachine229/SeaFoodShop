@@ -4,20 +4,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Services.Models
 {
-    [Table("Customer")]
-    public class Customer
+    [Table("SubscriptionEmail")]
+    public class SubscriptionEmail
     {
         public int Id { get; set; }
 
-        public Guid GuidId { get; set; }
-
-        [StringLength(350)]
+        [StringLength(255)]
         public string Email { get; set; }
 
-        [StringLength(255)]
-        public string Password { get; set; }
-
-        public bool? Status { get; set; }
+        public bool? IsActive { get; set; }
 
         public DateTime? CreatedDate { get; set; }
     }
