@@ -69,31 +69,17 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\CustomerInfor.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\News.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderItem.cs" />
-    <Compile Include="Models\Permission.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductCate.cs" />
-    <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\SubscriptionEmail.cs" />
-    <Compile Include="Models\Wishlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AprioriRuleRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
-    <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
-    <Compile Include="ViewModels\FlotResViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
-    <Compile Include="ViewModels\SearchOrderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
