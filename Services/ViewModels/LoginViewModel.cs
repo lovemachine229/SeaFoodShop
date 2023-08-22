@@ -2,7 +2,7 @@
 
 namespace Services.ViewModels
 {
-    class LoginViewModel
+    public class LoginViewModel
     {
         [Required(ErrorMessage ="Email không được để trống!")]
         public string Email { get; set; }

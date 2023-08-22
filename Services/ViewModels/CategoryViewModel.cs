@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services.ViewModels
 {
-    class CategoryViewModel
+    public class CategoryViewModel
     {
         public int Id { get; set; }
         public int? ParentId { get; set; }
