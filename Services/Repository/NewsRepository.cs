@@ -105,7 +105,7 @@ namespace Services.Repository
 
                 var rs = ExecuteStoredProcedure<News>("News_ListAll_Paging", p);
 
-                totalRow = p.Get<int>("totalRow");
+                totalRow = p.Get<int>("@totalRow");
 
                 return rs;
             }

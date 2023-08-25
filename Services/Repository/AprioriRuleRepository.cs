@@ -44,7 +44,7 @@ namespace Services.Repository
         public List<Product> GetRecommandProducts(List<string> lstX)
         {
             var p = new DynamicParameters();
-            p.Add("strLstX", string.Join("|", lstX));
+            p.Add("@strLstX", string.Join("|", lstX));
             var products = DbConnect.Query<Product>("Proc_Apriori_GetRecommendProducts", p, transaction: Transaction, commandType: CommandType.StoredProcedure);
             return products.ToList();
         }
