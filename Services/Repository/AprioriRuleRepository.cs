@@ -46,13 +46,13 @@ namespace Services.Repository
             var p = new DynamicParameters();
             p.Add("@strLstX", string.Join("|", lstX));
             var products = DbConnect.Query<Product>("Proc_Apriori_GetRecommendProducts", p, transaction: Transaction, commandType: CommandType.StoredProcedure);
-            return products.ToList();
+            return products.AsList();
         }
 
         public List<AprioriRule> GetAllRules()
         {
             var rules = DbConnect.Query<AprioriRule>("Proc_Apriori_GetAllRules", transaction: Transaction, commandType: CommandType.StoredProcedure);
-            return rules.ToList();
+            return rules.AsList();
         }
     }
 }

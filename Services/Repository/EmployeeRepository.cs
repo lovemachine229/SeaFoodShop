@@ -126,7 +126,7 @@ namespace Services.Repository
                 var rs = ExecuteStoredProcedure<EmployeeViewModel>("Employee_ListAllPaging", p);
                 totalRow = p.Get<int>("@totalRow");
 
-                return rs.ToList();
+                return rs.AsList();
             }
             catch (Exception ex)
             {

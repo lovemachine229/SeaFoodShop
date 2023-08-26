@@ -22,7 +22,7 @@ namespace Services.Repository
 
         bool ChangePayment(int orderId, int payment);
 
-        IEnumerable<ChartsDataViewModel> statiticsByDay(DateTime fromDate, DateTime toDate);
+        IEnumerable<ChartsDataViewModel> statisticsByDay(DateTime fromDate, DateTime toDate);
 
         IEnumerable<Order> ListByCustomer(int customerId);
 
@@ -114,7 +114,7 @@ namespace Services.Repository
 
                 var rs = ExecuteStoredProcedure<Apriori.Model.Order>("Proc_Apriori_GetOrders", p);
 
-                return rs.ToList();
+                return rs.AsList();
             }
             catch (Exception ex)
             {
@@ -282,7 +282,7 @@ namespace Services.Repository
 
                 var rs = ExecuteStoredProcedure<OrderItem>("OrderItem_ListAll", p);
 
-                return rs.ToList();
+                return rs.AsList();
             }
             catch (Exception ex)
             {

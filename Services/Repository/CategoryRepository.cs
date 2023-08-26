@@ -80,7 +80,7 @@ namespace Services.Repository
                 var p = new DynamicParameters();
                 p.Add("@exclude", exclude);
                 var res = DbConnect.Query<Category>("Category_ListAll", p, transaction: Transaction, commandType: CommandType.StoredProcedure);
-                return res.ToList();
+                return res.AsList();
             }
             catch (Exception)
             {
@@ -98,7 +98,7 @@ namespace Services.Repository
                 p.Add("@totalRow", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 var res = DbConnect.Query<CategoryViewModel>("Category_ListAllPaging", p, transaction: Transaction, commandType: CommandType.StoredProcedure);
                 totalRow = p.Get<int>("@totalRow");
-                return res.ToList();
+                return res.AsList();
             }
             catch (Exception)
             {
@@ -113,7 +113,7 @@ namespace Services.Repository
                 var p = new DynamicParameters();
                 p.Add("@exclude", exclude);
                 var res = DbConnect.Query<CategoryViewModel>("Category_ListAllWithCountProduct", p, transaction: Transaction, commandType: CommandType.StoredProcedure);
-                return res.ToList();
+                return res.AsList();
             }
             catch (Exception)
             {
@@ -132,7 +132,7 @@ namespace Services.Repository
                 p.Add("@totalRow", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 var res = DbConnect.Query<Product>("Product_ListByCate", p, transaction: Transaction, commandType: CommandType.StoredProcedure);
                 totalRow = p.Get<int>("@totalRow");
-                return res.ToList();
+                return res.AsList();
             }
             catch (Exception)
             {

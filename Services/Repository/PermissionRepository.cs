@@ -31,7 +31,7 @@ namespace Services.Repository
 
                 p.Add("@RoleId", roleId);
 
-                return ExecuteStoredProcedure<Permission>("Permission_Get", p).ToList();
+                return ExecuteStoredProcedure<Permission>("Permission_Get", p).AsList();
             }
             catch (Exception ex)
             {
