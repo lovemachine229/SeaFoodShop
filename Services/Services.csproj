@@ -83,6 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AprioriRuleRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\CustomerInfoRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\EmployeeRepository.cs" />
     <Compile Include="Repository\NewsRepository.cs" />
@@ -91,6 +92,9 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="Repository\RoleRepository.cs" />
+    <Compile Include="Repository\UnitOfWork.cs" />
+    <Compile Include="Repository\UtilityRepository.cs" />
+    <Compile Include="ViewModels\CartItemViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ChartsDataViewModel.cs" />
