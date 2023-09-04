@@ -109,7 +109,7 @@ namespace Services.Repository
 
                 var rs = ExecuteStoredProcedure<CustomerViewModel>("CustomerFullInfo_ListAll", p);
 
-                totalRow = p.Get<int>("TotalRow");
+                totalRow = p.Get<int>("@TotalRow");
 
                 return rs;
             }
@@ -132,7 +132,7 @@ namespace Services.Repository
 
                 ExecuteStoredProcedure("Customer_Login", p);
 
-                return p.Get<int>("Output");
+                return p.Get<int>("@Output");
             }
             catch (Exception ex)
             {
@@ -156,7 +156,7 @@ namespace Services.Repository
 
                 ExecuteStoredProcedure("Customer_Create", p);
 
-                return p.Get<int>("Output");
+                return p.Get<int>("@Output");
             }
             catch (Exception ex)
             {
