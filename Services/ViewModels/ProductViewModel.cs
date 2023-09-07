@@ -53,7 +53,7 @@ namespace Services.ViewModels
 
         public bool? IsHot { get; set; }
 
-        public bool? View { get; set; }
+        public int? View { get; set; }
 
         public string Categories { get; set; }
 

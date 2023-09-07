@@ -16,7 +16,7 @@ namespace Services.Repository
 
         Order ViewOrder(int id);
 
-        int ChechkOrder(int orderId, string email);
+        int CheckOrder(int orderId, string email);
 
         bool ChangeStatus(int orderId, int statusId);
 
@@ -85,7 +85,7 @@ namespace Services.Repository
             }
         }
 
-        public int ChechkOrder(int orderId, string email)
+        public int CheckOrder(int orderId, string email)
         {
             try
             {

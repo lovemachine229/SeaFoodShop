@@ -1,0 +1,15 @@
+﻿@model List<Services.Models.Role>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Description</td>
+        <td><input type="checkbox" class="cbStatus" @(item.Status == true ? "checked" : "") data-id="@item.Id" /></td>
+        <td>
+            <a href="/Role/Edit/@item.Id">Sửa</a> |
+            <a href="#" class="role_delete" data-id="@item.Id">Xóa</a> |
+            <a href="/Role/Config/@item.Id" class="role_config" >Cấu hình</a>
+        </td>
+    </tr>
+}

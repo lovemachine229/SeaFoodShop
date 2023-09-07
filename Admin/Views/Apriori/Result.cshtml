@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Kết quả áp dụng";
+}
+
+@section css{
+    <style>
+        .table.table-condensed tbody tr td {
+            padding: 12px 5px !important;
+        }
+    </style>
+    <link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+@section currentNavBar{
+    <li>
+        <a href="/Apriori/Result" class="active">Kết quả áp dụng</a>
+    </li>
+}
+
+@section scripts{
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Js/Controller/AprioriResult.js"></script>
+}
+
+<div class="container-fluid container-fixed-lg">
+    <div class="panel panel-transparent">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Kết quả áp dụng
+            </div>
+            <div class="export-options-container pull-right"></div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-condensed" id="tblAprioriResult">
+                    <thead>
+                        <tr>
+                            <td>Luật</td>
+                            <td>Đầu vào</td>
+                            <td>Đầu ra</td>
+                            <td>Độ tin cậy</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
