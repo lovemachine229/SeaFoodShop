@@ -1,7 +1,6 @@
 ﻿using Admin.Attributes;
 using Common;
 using Services.Apriori;
-using Services.Apriori.Model;
 using Services.Enum;
 using Services.Models;
 using Services.Repository;

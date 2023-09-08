@@ -23,7 +23,7 @@ namespace Admin.Controllers
                 return View(obj);
             using (var uow = new UnitOfWork(Shared.connString))
             {
-                obj.Password = Common.ExtendMethod.MD5EnCryptor(obj.Password + Shared.MD5_KEY);
+                obj.Password = ExtendMethod.MD5EnCryptor(obj.Password + Shared.MD5_KEY);
                 var employee = uow.EmployeeRepository.Login(obj);
                 if(employee != null)
                 {

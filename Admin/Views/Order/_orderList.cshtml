@@ -9,7 +9,7 @@
     <tr>
         <td><a href="#" class="linkOrderDetail" data-id="@item.Id" data-email="@item.Email">@item.Id</a></td>
         <td>@item.Email</td>
-        <td>@item.TotalAmount.GetValueOrDefault().labelFormatCurrency()</td>
+        <td>@item.TotalAmount.GetValueOrDefault().LabelFormatCurrency()</td>
         <td>
             <select class="form-control optStatus" style="padding-bottom:0;padding-top:0;" data-id="@item.Id" @(item.Status > 3 ? "disabled" : "")>
                 @foreach (var jtem in listStatus)

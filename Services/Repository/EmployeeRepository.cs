@@ -144,7 +144,7 @@ namespace Services.Repository
                 p.Add("@Email", obj.Email);
                 p.Add("@Password", obj.Password);
 
-                var rs = ExecuteStoredProcedure<Employee>("Login", p);
+                var rs = ExecuteStoredProcedure<Employee>("Employee_Login", p);
 
                 return rs.SingleOrDefault();
             }

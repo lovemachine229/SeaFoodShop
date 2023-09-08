@@ -44,7 +44,7 @@ namespace Common
             return date.Day + "/" + date.Month + "/" + date.Year;
         }
 
-        public static string LabelFormatCurrency(decimal num) 
+        public static string LabelFormatCurrency( this decimal num) 
         {
             return string.Format("{0:0,0} ₫", num);
         }

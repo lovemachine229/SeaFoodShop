@@ -39,16 +39,16 @@
                 {
                     <tr>
                         <td>@item.ProductName</td>
-                        <td>@item.LastPrice.GetValueOrDefault().labelFormatCurrency()</td>
+                        <td>@item.LastPrice.GetValueOrDefault().LabelFormatCurrency()</td>
                         <td>@item.Quantity</td>
-                        <td>@((item.LastPrice.GetValueOrDefault() * item.Quantity).labelFormatCurrency())</td>
+                        <td>@((item.LastPrice.GetValueOrDefault() * item.Quantity).LabelFormatCurrency())</td>
                     </tr>
                 }
             </tbody>
             <tfoot>
                 <tr>
                     <td class="bold font-montserrat text-uppercase" style="text-align:right" colspan="3">Tổng tiền:</td>
-                    <td class="bold font-montserrat text-uppercase">@Model.order.TotalAmount.GetValueOrDefault().labelFormatCurrency()</td>
+                    <td class="bold font-montserrat text-uppercase">@Model.order.TotalAmount.GetValueOrDefault().LabelFormatCurrency()</td>
                 </tr>
             </tfoot>
         </table>

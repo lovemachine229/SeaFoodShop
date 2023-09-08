@@ -33,7 +33,7 @@ namespace Services.ViewModels
         public string Avatar { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập Số lượng!")]
-        public int Qualtity { get; set; }
+        public int Quantity { get; set; }
 
         public string Unit { get; set; }
 
