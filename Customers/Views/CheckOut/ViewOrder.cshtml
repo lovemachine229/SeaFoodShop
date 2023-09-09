@@ -23,7 +23,7 @@
                                             <p><b>Mã đơn hàng:</b> @Model.order.Id</p>
                                             <p><b>Tình trạng:</b> @Model.order.Status.getOrderStatusName()</p>
                                             <p><b>Thanh toán:</b> @Model.order.Payment.getOrderPaymentName()</p>
-                                            <p><b>Ngày đặt hàng:</b> @Model.order.Date.convertDateToString()</p>
+                                            <p><b>Ngày đặt hàng:</b> @Model.order.Date.DateTimeToString()</p>
                                         </div>
                                         <div class="col-sm-6">
                                             <p><b>Khách hàng:</b> @Model.addressDelivery.FullName</p>

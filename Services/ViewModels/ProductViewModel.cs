@@ -57,9 +57,9 @@ namespace Services.ViewModels
 
         public string Categories { get; set; }
 
-        public string CatName { get; set; }
+        public string CateName { get; set; }
 
-        public int CatId { get; set; }
+        public int CateId { get; set; }
 
         public decimal SellPrice
         {

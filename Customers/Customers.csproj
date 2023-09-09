@@ -643,8 +643,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="UploadedFiles\DanhSachChiTietDatHang-22-03-2022-1647938266889.xlsx" />
     <Content Include="Views\Account\ChangePassword.cshtml" />
@@ -673,6 +671,12 @@
     <Content Include="Views\Product\_BestDeals.cshtml" />
     <Content Include="Views\Product\_RelatedProducts.cshtml" />
     <Content Include="Views\Shared\_Product.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\_BlogItem.cshtml" />
+    <Content Include="Views\Home\_Blogs.cshtml" />
+    <Content Include="Views\Home\_Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
