@@ -1,7 +1,7 @@
 ﻿@using Common
 @model List<Services.Models.Order>
 @{
-    var listStatus = ExtendMethod.get_OrderStatus();
+    var listStatus = ExtendMethod.GetOrderStatus();
  }
 
 @foreach (var item in Model)
