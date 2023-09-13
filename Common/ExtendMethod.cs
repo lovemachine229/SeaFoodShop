@@ -10,6 +10,18 @@ namespace Common
 {
     public static class ExtendMethod
     {
+        public static string GetOrderStatusName(this int num)
+        {
+            var list = GetOrderStatus();
+            return list.Where(x => x.Id == num).SingleOrDefault().Name;
+        }
+
+        public static string GetOrderPaymentName(this int num)
+        {
+            var list = GetOrderPayment();
+            return list.Where(x => x.Id == num).SingleOrDefault().Name;
+        }
+
         public static string MD5EnCryptor(string text)
         {
             if (String.IsNullOrEmpty(text))

@@ -20,16 +20,16 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <p><b>Mã đơn hàng:</b> @Model.order.Id</p>
-                                            <p><b>Tình trạng:</b> @Model.order.Status.getOrderStatusName()</p>
-                                            <p><b>Thanh toán:</b> @Model.order.Payment.getOrderPaymentName()</p>
-                                            <p><b>Ngày đặt hàng:</b> @Model.order.Date.DateTimeToString()</p>
+                                            <p><b>Mã đơn hàng:</b> @Model.Order.Id</p>
+                                            <p><b>Tình trạng:</b> @Model.Order.Status.GetOrderStatusName()</p>
+                                            <p><b>Thanh toán:</b> @Model.Order.Payment.GetOrderPaymentName()</p>
+                                            <p><b>Ngày đặt hàng:</b> @Model.Order.Date.DateTimeToString()</p>
                                         </div>
                                         <div class="col-sm-6">
-                                            <p><b>Khách hàng:</b> @Model.addressDelivery.FullName</p>
-                                            <p><b>Số điện thoại:</b> @Model.addressDelivery.PhoneNo</p>
-                                            <p><b>Email:</b> @Model.addressDelivery.Email</p>
-                                            <p><b>Địa chỉ:</b> @Model.addressDelivery.Address</p>
+                                            <p><b>Khách hàng:</b> @Model.AddressDelivery.FullName</p>
+                                            <p><b>Số điện thoại:</b> @Model.AddressDelivery.PhoneNo</p>
+                                            <p><b>Email:</b> @Model.AddressDelivery.Email</p>
+                                            <p><b>Địa chỉ:</b> @Model.AddressDelivery.Address</p>
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach (var item in Model.listOrderItem)
+                                                @foreach (var item in Model.ListOrderItem)
                                                 {
                                                     <tr>
                                                         <td class="name">
@@ -72,7 +72,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <td class="left" colspan="3">Tổng tiền:</td>
-                                                    <td class="right">@Model.order.TotalAmount.GetValueOrDefault().LabelFormatCurrency()</td>
+                                                    <td class="right">@Model.Order.TotalAmount.GetValueOrDefault().LabelFormatCurrency()</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
