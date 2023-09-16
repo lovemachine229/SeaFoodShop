@@ -114,7 +114,7 @@
                                 toastr["success"]('Tạo đơn hàng thành công, Hệ thống sẽ tự động chuyển sang trang thanh toán.');
                                 var buyerInfo = res.ssAddress.FullName + '*|*' + res.ssAddress.Email + '*|*' + res.ssAddress.PhoneNo + '*|*' + res.ssAddress.Address;
 
-                                var urlNganLuong = 'https://sandbox.nganluong.vn:8088/nl35/checkout.php';
+                                var urlNganLuong = 'https://sandbox.nganluong.vn/nl35/checkout.php';
                                 urlNganLuong += '?merchant_site_code=51457';
                                 urlNganLuong += '&return_url=' + location.origin + '/CheckOut/PaymentSuccess';
                                 urlNganLuong += '&receiver=makettuthan@gmail.com';
