@@ -63,7 +63,7 @@
             });
             $('#btn-change-password').off('click').on('click', function (e) {
                 e.preventDefault();
-                location.href = '/doi-mat-khau';
+                location.href = "/Account/ChangePassword";
             })
         },
         addToCart: function (productId,quantity) {

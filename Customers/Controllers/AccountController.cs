@@ -114,7 +114,7 @@ namespace Customers.Controllers
                     customerInfo.PhoneNo = obj.PhoneNo;
                     customerInfo.GuidId = obj.GuidId;
                     var res2 = uow.CustomerInfoRepository.Create(customerInfo);
-                    if(res2 <= 0)
+                    if(res2 < -1)
                         return Redirect("/not-found");
                 }
 

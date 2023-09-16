@@ -26,7 +26,7 @@
                         {
                             <tr>
                                 <td class="model"><a style="color:#337ab7;font-size:16px;" href="/CheckOut/ViewOrder?orderId=@item.Id&email=@item.Email">@item.Id</a></td>
-                                <td class="model">@item.Status.getOrderStatusName()</td>
+                                <td class="model">@item.Status.GetOrderStatusName()</td>
                                 <td class="price">
                                     <div class="price">
                                         @item.TotalAmount.GetValueOrDefault().LabelFormatCurrency()

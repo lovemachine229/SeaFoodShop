@@ -50,6 +50,10 @@ namespace Common
         {
             return DateTime.ParseExact(strDateTime, "dd/MM/yyyy", CultureInfo.InvariantCulture);
         }
+        public static DateTime? ToSQLDatetime(this string strDateTime)
+        {
+            return DateTime.ParseExact(strDateTime, "yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
+        }
 
         public static string DateTimeToString(this DateTime date)
         {

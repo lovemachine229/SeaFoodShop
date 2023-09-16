@@ -490,6 +490,9 @@
     <Content Include="Assets\javascript\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Assets\javascript\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\Plugin\ToastMessage\build\toastr.js.map" />
+    <Content Include="Contents\ChangePassword.cshtml" />
+    <Content Include="Contents\Login.cshtml" />
+    <Content Include="Contents\Register.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\lavanhoa229-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\lavanhoa229-001-site1 - Web Deploy.pubxml" />
