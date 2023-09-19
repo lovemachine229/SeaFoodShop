@@ -126,8 +126,8 @@ namespace Services.Repository
 
         public void Dispose()
         {
-            this.Dispose();
-            GC.Collect();
+            dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         private void dispose(bool disposing)
@@ -149,6 +149,10 @@ namespace Services.Repository
                 }
                 _disposed = true;
             }
+        }
+        ~UnitOfWork()
+        {
+            dispose(false);
         }
     }
 }

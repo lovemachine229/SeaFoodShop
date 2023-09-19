@@ -1,0 +1,35 @@
+﻿@model List<Services.ViewModels.CartItemViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="/Home/Index"><i class="fa fa-home"></i></a></li>
+        <li><a href="#">Giỏ hàng</a></li>
+    </ul>
+    <div class="row">
+        <div id="content" class="col-sm-12">
+            @if (Model != null)
+            {
+                { Html.RenderPartial("/Views/Cart/_cartBox.cshtml", Model); }
+
+                <div class="product-related" style="margin-top:30px;">
+                    <h2>Sản phẩm liên quan</h2>
+                    @{ Html.RenderAction("RelatedProducts", "Product", new { productIds = Model.Select(_ => _.productId.ToString()).ToList() });}
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<script src="~/Assets/controller/cartController.js"></script> 
+}
+
+
+
+
+
+

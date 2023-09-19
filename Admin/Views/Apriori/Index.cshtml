@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "Apriori";
+}
+
+@section css{
+    <style>
+        .table.table-condensed tbody tr td {
+            padding: 12px 5px !important;
+        }
+    </style>
+    <link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Js/Controller/Apriori.js"></script>
+}
+
+
+@section currentNavBar{
+    <li>
+        <a href="/Apriori" class="active">Apriori</a>
+    </li>
+}
+
+<div class="container-fluid container-fixed-lg">
+    <div id="rootwizard" class="m-t-50">
+        <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm">
+            <li class="active">
+                <a data-toggle="tab" href="#tabTransaction"><i class="fa fa-shopping-cart tab-icon"></i> <span>Giao dịch (Transactions)</span></a>
+            </li>
+            <li class="">
+                <a data-toggle="tab" href="#tabMinSuport"><i class="fa fa-truck tab-icon"></i> <span>Cài đặt Minimum Suport</span></a>
+            </li>
+            <li class="">
+                <a data-toggle="tab" href="#tabExecApriori"><i class="fa fa-credit-card tab-icon"></i> <span>Thực thi thuật toán</span></a>
+            </li>
+            <li class="">
+                <a data-toggle="tab" href="#tabResult"><i class="fa fa-check tab-icon"></i> <span>Kết quả (Rules)</span></a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane padding-20 active slide-left" id="tabTransaction">
+                <div class="row row-same-height">
+                    <div class="col-md-12">
+                        <table id="tblTransactions" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    @*<th>#</th>*@
+                                    <th>Id đơn hàng</th>
+                                    <th>Id sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane slide-left padding-20" id="tabMinSuport">
+                <div class="row row-same-height">
+                    <div class="col-md-8 b-r b-dashed b-grey ">
+                        <table id="tblSupports" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Id sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Support</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="padding-30">
+                            <form role="form" id="frmMinSupport">
+                                <h2>Thiết lập minimum support</h2>
+                                <div class="form-group-attached">
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <p class="hide" style="color:#a94442" id="validate-summary"></p>
+                                            <div class="form-group form-group-default required">
+                                                <label>Minimum support</label>
+                                                <input type="text" class="form-control" required="" id="txtMinSupport">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-cons" style="margin-top:30px;" id="btnExecuteApriori">Thực hiện</button>
+                            </form>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="tab-pane slide-left padding-20" id="tabExecApriori">
+               
+            </div>
+            <div class="tab-pane slide-left padding-20" id="tabResult">
+                <div class="row row-same-height">
+                    <div class="col-md-8 b-r b-dashed b-grey apriori-result">
+                      
+                    </div>
+                    <div class="col-md-4">
+                        <div class="padding-30">
+                            <form role="form" id="frmConfidence">
+                                <h2>Thiết lập độ tin cậy</h2>
+                                <div class="form-group-attached">
+                                    <div class="row clearfix">
+                                        <div class="col-sm-12">
+                                            <p class="hide" style="color:#a94442" id="validate-summary"></p>
+                                            <div class="form-group form-group-default required">
+                                                <label>Confidence</label>
+                                                <input type="text" class="form-control" required="" id="txtConfidence">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-cons" style="margin-top:30px;" id="btnSaveResult">Áp dụng</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

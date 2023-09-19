@@ -159,7 +159,7 @@ namespace Services.Repository
                 p.Add("@EndDate", obj.EndDate);
                 p.Add("@Published", obj.Published);
                 p.Add("@IsHot", obj.IsHot);
-                p.Add("@Quantity", obj.Qualtity);
+                p.Add("@Quantity", obj.Quantity);
                 p.Add("@Unit", obj.Unit);
 
                 ExecuteStoredProcedure("Product_Create", p);
@@ -226,10 +226,10 @@ namespace Services.Repository
 
                 return rs;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
@@ -464,7 +464,7 @@ namespace Services.Repository
                 p.Add("@EndDate", obj.EndDate);
                 p.Add("@Published", obj.Published);
                 p.Add("@IsHot", obj.IsHot);
-                p.Add("@Quantity", obj.Qualtity);
+                p.Add("@Quantity", obj.Quantity);
                 p.Add("@Unit", obj.Unit);
                 p.Add("@Output", dbType: DbType.Int32, direction: ParameterDirection.Output);
 

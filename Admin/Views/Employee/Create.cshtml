@@ -1,0 +1,93 @@
+﻿@model Services.Models.Employee
+@{
+    ViewBag.Title = "Tạo mới nhân viên";
+}
+
+
+@section currentNavBar{
+    <li>
+        <a href="/Employee" class="active">Nhân viên</a>
+    </li>
+    <li>
+        <a href="#" class="active">Tạo mới</a>
+    </li>
+}
+
+<div class="container-fluid container-fixed-lg">
+    <div class="row">
+        <div class="col-md-offset-2 col-lg-8 col-md-6">
+            <div class="panel panel-transparent">
+                <div class="panel-body">
+                    <form id="form-employee-create" role="form" action="/Employee/Create" method="post">
+                        <div class="row clearfix">
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                            <input type="hidden" name="Result" id="Result" value="@ViewBag.Result" />
+                            <div class="col-sm-6" style="padding-right:0;padding-left:0;">
+                                <div class="form-group form-group-default">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" name="Email" id="Email" autofocus>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-default">
+                                    <label>Mật khẩu</label>
+                                    <input type="password" class="form-control" name="Password" id="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6" style="padding-right:0;padding-left:0;">
+                                <div class="form-group form-group-default">
+                                    <label>Họ tên</label>
+                                    <input type="text" class="form-control" name="FullName" id="FullName">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-default form-group-default-select2">
+                                    <label>Vai trò</label>
+                                    <select class="full-width" id="RoleId" name="RoleId" data-init-plugin="select2">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-default">
+                                    <label>Trạng thái</label>
+                                    @Html.CheckBoxFor(m => m.IsActive)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <button class="btn btn-primary" type="submit">Save</button>
+                        <a class="btn btn-default" href="/Employee">Back To List</a>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: _mainConfig.relativePath + '/Role/ListAll',
+                type: 'get',
+                contentType: 'application/json',
+                success: function (res) {
+                    var html = '';
+                    $.each(res.data, function (i, item) {
+                        html += "<option value=" + item.Id + ">" + item.Name + "</option>";
+                    });
+                    $('select#RoleId').html(html);
+                }
+            });
+
+            if ($('#Result').val() != "")
+                toastr["error"]("Có lỗi xảy ra, vui lòng thử lại.");
+        })
+    </script>
+    }

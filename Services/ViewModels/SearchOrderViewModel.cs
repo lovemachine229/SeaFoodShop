@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services.ViewModels
 {
-    class SearchOrderViewModel
+    public class SearchOrderViewModel
     {
         [Required]
         public int OrderId { get; set; }

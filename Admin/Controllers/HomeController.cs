@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Common;
+using Services.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,11 +8,20 @@ using System.Web.Mvc;
 
 namespace Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AuthorizeController
     {
         public ActionResult Index()
         {
-            return View();
+            using (var uow = new UnitOfWork(Shared.connString))
+            {
+                ViewBag.CountCustomer = uow.UtilityRepository.CountCustomer();
+                ViewBag.CountProduct = uow.UtilityRepository.CountProduct();
+                ViewBag.CountOrder = uow.UtilityRepository.CountOrder();
+                ViewBag.CountRevenue = uow.UtilityRepository.CountRevenue();
+
+                return View();
+
+            }
         }
 
         public ActionResult About()

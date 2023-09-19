@@ -13,7 +13,7 @@ namespace Services.Repository
     public interface IAprioriRuleRepository
     {
         int Save(List<AprioriRule> rules);
-        List<Product> GetRecommandProducts(List<string> lstX);
+        List<Product> GetRecommendProducts(List<string> lstX);
         List<AprioriRule> GetAllRules();
     }
 
@@ -41,7 +41,7 @@ namespace Services.Repository
             }
         }
 
-        public List<Product> GetRecommandProducts(List<string> lstX)
+        public List<Product> GetRecommendProducts(List<string> lstX)
         {
             var p = new DynamicParameters();
             p.Add("@strLstX", string.Join("|", lstX));

@@ -24,7 +24,7 @@ namespace Services.Models
         public string Name { get; set; }
 
         [StringLength(255)]
-        public int Code { get; set; }
+        public string Code { get; set; }
 
         public string Description { get; set; }
 
@@ -35,7 +35,7 @@ namespace Services.Models
 
         public string Avatar { get; set; }
 
-        public int? Qualtity { get; set; }
+        public int? Quantity { get; set; }
 
         public string Unit { get; set; }
 

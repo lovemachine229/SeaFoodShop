@@ -33,7 +33,7 @@ namespace Services.ViewModels
         public string Avatar { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập Số lượng!")]
-        public int Qualtity { get; set; }
+        public int Quantity { get; set; }
 
         public string Unit { get; set; }
 
@@ -53,13 +53,13 @@ namespace Services.ViewModels
 
         public bool? IsHot { get; set; }
 
-        public bool? View { get; set; }
+        public int? View { get; set; }
 
         public string Categories { get; set; }
 
-        public string CatName { get; set; }
+        public string CateName { get; set; }
 
-        public int CatId { get; set; }
+        public int CateId { get; set; }
 
         public decimal SellPrice
         {

@@ -148,9 +148,9 @@ namespace Services.Repository
                 var p = new DynamicParameters();
 
                 p.Add("@Output", dbType: DbType.Int32, direction: ParameterDirection.Output);
-                p.Add("@GuidId", obj.GuidId);
+                p.Add("@GuidId", obj.GuidId.ToString());
                 p.Add("@Status", obj.Status);
-                p.Add("@CreatedDate", obj.CreatedDate);
+                p.Add("@CreatedDate",obj.CreatedDate);
                 p.Add("@Email", obj.Email);
                 p.Add("@Password", obj.Password);
 

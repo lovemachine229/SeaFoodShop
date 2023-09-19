@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "Cấu hình vai trò";
+}
+
+@section currentNavBar{
+    <li>
+        <a href="/Role" class="active">Vai trò</a>
+    </li>
+    <li>
+        <a href="#" class="active">Cấu hình</a>
+    </li>
+}
+
+<input type="hidden" value="@ViewBag.RoleId" id="txtRoleId"/>
+<div class="container-fluid container-fixed-lg">
+    <div class="row">
+        <div class="col-md-offset-2 col-lg-8 col-md-6">
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        Danh sách quyền hạn
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="check-tree" style="margin-bottom:20px;">
+                    </div>
+                    <div class="clearfix"></div>
+                    <button class="btn btn-primary" type="submit" id="btnSaveConfig">Save</button>
+                    <a class="btn btn-default" href="/Role">Quay lại</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var treeData = [
+                {
+                    title: "Khách hàng", isFolder: true, key: "Customer", expand: true,
+                    children: [
+                        {
+                            title: "Xem", key: "Read"
+                        },
+                        {
+                            title: "Sửa", key: "Update"
+                        }]
+                },
+                {
+                    title: "Sản phẩm", isFolder: true, key: "Product",
+                    children: [
+                        {
+                            title: "Xem", key: "Read"
+                        },
+                        {
+                            title: "Thêm", key: "Create"
+                        },
+                        {
+                            title: "Sửa", key: "Update"
+                        },
+                        {
+                            title: "Thống kê", key: "Statistic"
+                        }]
+                },
+                {
+                    title: "Ngành hàng", isFolder: true, key: "Category",
+                    children: [
+                        {
+                            title: "Xem", key: "Read"
+                        },
+                        {
+                            title: "Thêm", key: "Create"
+                        },
+                        {
+                            title: "Sửa", key: "Update"
+                        },
+                        {
+                            title: "Xóa", key: "Delete"
+                        }
+                    ]
+                },
+                {
+                    title: "Đơn hàng", isFolder: true, key: "Order",
+                    children: [
+                        {
+                            title: "Xem", key: "Read"
+                        },
+                        {
+                            title: "Sửa", key: "Update"
+                        },
+                        {
+                            title: "Thống kê", key: "Statistic"
+                        }
+                    ]
+                },
+                {
+                    title: "Bài viết", isFolder: true, key: "News",
+                    children: [
+                        {
+                            title: "Xem", key: "Read"
+                        },
+                        {
+                            title: "Thêm", key: "Create"
+                        },
+                        {
+                            title: "Sửa", key: "Update"
+                        },
+                        {
+                            title: "Xóa", key: "Delete"
+                        }
+                    ]
+                },
+                {
+                    title: "Apriori", key: "Apriori", isFolder: true,
+                    children: [
+                        {
+                            title: "Xem kết quả", key: "Read"
+                        },
+                        {
+                            title: "Cấu hình", key: "Config"
+                        }
+                    ]
+                },
+                {
+                    title: "Vai trò", key: "Role", isFolder: true,
+                    children: [
+                        {
+                            title: "Xem", key: "Read"
+                        },
+                        {
+                            title: "Thêm", key: "Create"
+                        },
+                        {
+                            title: "Sửa", key: "Update"
+                        },
+                        {
+                            title: "Xóa", key: "Delete"
+                        },
+                        {
+                            title: "Cấu hình", key: "Config"
+                        }
+                    ]
+                },
+                {
+                    title: "Nhân viên", key: "Employee", isFolder: true,
+                    children: [
+                        {
+                            title: "Xem", key: "Read"
+                        },
+                        {
+                            title: "Thêm", key: "Create"
+                        },
+                        {
+                            title: "Sửa", key: "Update"
+                        },
+                        {
+                            title: "Xóa", key: "Delete"
+                        }
+                    ]
+                }
+            ];
+            
+            $.ajax({
+                url: _mainConfig.relativePath + '/Role/GetPermission',
+                data: { roleId: $('#txtRoleId').val() },
+                type: 'get',
+                success: function (res) {
+                    if (res) {
+                        $.each(res, function (i, item) {
+                            var module = treeData.filter(_ => _.key == item.Module)[0];
+                            for (var prop in item) {
+                                if (item[prop] === true) {
+                                    var child = module.children.filter(_ => _.key == prop)[0];
+                                    child.select = true;
+                                }
+                            }
+                        });
+                    }
+
+                    var inEventHandler = false;
+                    $("#check-tree").dynatree({
+                        checkbox: true,
+                        selectMode: 3,
+                        children: treeData,
+                        onClick: function (node, event) {
+                            if (node.getEventTargetType(event) == "title")
+                                node.toggleSelect();
+                        },
+                        cookieId: "dynatree-Cb2",
+                        idPrefix: "dynatree-Cb2-"
+                    });
+                }
+            });
+
+           
+
+            $('#btnSaveConfig').on('click', function (e) {
+                e.preventDefault();
+
+                var selected = $("#check-tree").dynatree("getSelectedNodes") || [];
+                var lstPer = [];
+
+                $.each(selected, function (i, item) {
+                    if (!item.data.isFolder) {
+                        var key = item.data.key;
+                        var module = item.parent.data.key;
+                        var per = lstPer.filter(_ => _.Module == module);
+                        if (per.length > 0) {
+                            per[0][key] = true;
+                        }
+                        else {
+                            per = {
+                                Module: module
+                            };
+
+                            per[key] = true;
+                            lstPer.push(per)
+                        }
+                    }
+                });
+
+                $.ajax({
+                    url: _mainConfig.relativePath + '/Role/Config',
+                    data: JSON.stringify({ roleId: $('#txtRoleId').val(), lsPer: lstPer }),
+                    contentType: 'application/json',
+                    type: 'post',
+                    success: function (res) {
+                        if (res.status) {
+                            toastr["success"]("Cập nhật thành công.");
+                            setTimeout(function () { location.href = '/Role'; }, 2500);
+                        }
+                        else {
+                            toastr["error"]("Có lỗi xảy ra, vui lòng thử lại.");
+                            setTimeout(function () { location.reload() }, 2500);
+                        }
+                    }
+                });
+            });
+        })
+    </script>
+
+}
