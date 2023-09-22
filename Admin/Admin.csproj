@@ -1718,6 +1718,10 @@
     <Content Include="Assets\Template\pages\fonts\pages-icon\Pages-icon.eot" />
     <Content Include="Assets\Template\pages\fonts\pages-icon\Pages-icon.ttf" />
     <Content Include="Assets\Template\pages\fonts\pages-icon\Pages-icon.woff" />
+    <None Include="Properties\PublishProfiles\haisanadmin-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\haisanadmin-001-site1 - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\haisanadmin-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\haisanadmin-001-site1 - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1777,6 +1781,7 @@
     <Content Include="Views\Role\_roleList.cshtml" />
     <Content Include="Views\Apriori\Index.cshtml" />
     <Content Include="Views\Apriori\Result.cshtml" />
+    <Content Include="Views\Order\ViewOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
