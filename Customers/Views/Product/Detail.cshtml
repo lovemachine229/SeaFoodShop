@@ -148,6 +148,10 @@
                                         <span class="price-new">@Model.SaleOff.GetValueOrDefault().LabelFormatCurrency()</span>
                                         <span class="price-old">@Model.Price.LabelFormatCurrency()</span>
                                     }
+                                    else 
+                                    {
+                                        <span class="price-new">@Model.Price.LabelFormatCurrency()</span>
+                                    }
                                 }
                                 else
                                 {

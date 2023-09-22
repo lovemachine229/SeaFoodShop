@@ -74,7 +74,7 @@ namespace Admin.Controllers
                 model.Order = uow.OrderRepository.ViewOrder(obj.OrderId);
                 model.ListOrderItem = uow.OrderRepository.ViewListOrderItem(obj.OrderId).ToList();
 
-                return PartialView("_orderDetail", model);
+                return PartialView("ViewOrder", model);
             }
         }
 

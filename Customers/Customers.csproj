@@ -494,8 +494,12 @@
     <Content Include="Contents\Login.cshtml" />
     <Content Include="Contents\Register.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\haisanadmin-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\haisanadmin-001-site1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\lavanhoa229-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\lavanhoa229-001-site1 - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\lavanhoa229-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\lavanhoa229-001-site1 - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
