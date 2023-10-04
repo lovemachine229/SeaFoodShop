@@ -24,7 +24,7 @@ namespace Services.ViewModels
 
         public string RoleName { get; set; }
 
-        public bool? IsActived { get; set; }
+        public bool? IsActive { get; set; }
 
         public DateTime? CreatedDate { get; set; }
 
